@@ -27,28 +27,28 @@ scissors = '''
 ---.__(___)
 '''
 
-# Write your code below this line 👇
 game_images = [rock, paper, scissors]
 
-your_choice = int(
-    input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
+user_input = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
 
-print(f"Your choice: {your_choice}")
-print(game_images[your_choice])
+if user_input >= 3 or user_input < 0:
+  print("You typed in an invalid number. You lose!")
 
-computer_choice = random.randint(0, 2)
-print(f"Computer's choice: {computer_choice}")
-print(game_images[computer_choice])
-
-if your_choice >= 3 or your_choice < 0:
-    print("You have entered invalid number. You lost.")
-elif your_choice == 2 and computer_choice == 0:
-    print("You lost")
-elif computer_choice == 2 and your_choice == 0:
+else:
+  print("Your choice: ")
+  print(game_images[user_input])
+  computer_choice = random.randint(0,2)
+  
+  print("Computer's Choice: ")
+  print(game_images[computer_choice])
+  
+  if user_input == 0 and computer_choice == 2:
     print("You won!")
-elif your_choice > computer_choice:
+  elif computer_choice == 0 and user_input == 2:
+    print("You lose!")
+  elif computer_choice > user_input:
+    print("You lose!")
+  elif user_input > computer_choice:
     print("You won!")
-elif computer_choice > your_choice:
-    print("You lost")
-elif computer_choice == your_choice:
-    print("Its a draw. Try it again!")
+  elif computer_choice == user_input:
+    print("It's a draw")
