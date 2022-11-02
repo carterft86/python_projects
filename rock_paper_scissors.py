@@ -8,6 +8,7 @@ while True:
 
     while player not in choices:
         player = input("rock, paper, or scissors?: ").lower()
+        print("Please type in rock, paper, or scissors")
 
     if player == computer:
         print("player: ", player)
@@ -40,3 +41,10 @@ while True:
             print("player: ", player)
             print("computer: ", computer)
             print("You win!")
+
+    play_again = input("Play again? (yes/no): ").lower()
+
+    if play_again != "yes":
+        break
+
+print("Good Bye!")
